@@ -8,6 +8,28 @@
 
 - [demo](https://haowu.h5.zhengxs.cn/)
 
+## 截图
+
+- 首页
+
+![home](./screenshots/home.png)
+![home](./screenshots/home.png)
+
+- 购物车
+
+![cart](./screenshots/cart.png)
+
+- 我的
+
+![me](./screenshots/me.png)
+![settings](./screenshots/settings.png)
+
+- 摄像头
+
+基于 `navigator.mediaDevices.getUserMedia` 开发
+
+![camera](./screenshots/camera.png)
+
 [vitejs]: https://github.com/vitejs/vite
 [vue-next]: https://v3.vuejs.org/
 [vant]: https://vant-contrib.gitee.io/vant/#/zh-CN/
