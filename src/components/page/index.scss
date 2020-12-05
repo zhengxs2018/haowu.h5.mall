@@ -1,0 +1,42 @@
+@import 'sass-bem/bem';
+
+@include component('page', 'ux') {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+
+  @include element('header') {
+    box-sizing: border-box;
+  }
+
+  @include element('head-wrap') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    box-sizing: border-box;
+  }
+
+  @include element('extra') {
+    display: flex;
+    align-items: center;
+  }
+
+  @include element('content') {
+    box-sizing: border-box;
+  }
+
+  // 固定布局
+  @include is('fixed') {
+    display: flex;
+    flex-direction: column;
+
+    @include element('content') {
+      flex: 1;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+  }
+}

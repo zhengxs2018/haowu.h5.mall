@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "esnext",
+    "module": "esnext",
+    "sourceMap": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "strictBindCallApply": true,
+
+    /* JSX */
+    "jsx": "preserve",
+    "jsxFactory": "h",
+
+    "baseUrl": ".",
+    "paths": {
+      "/@/*": ["./src/*"]
+    },
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
+    "noEmitOnError": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    // "preserveSymlinks": true,              /* Do not resolve the real path of symlinks. */
+    "isolatedModules": true,
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
+    "lib": ["ESNext", "dom"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

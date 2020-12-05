@@ -1,0 +1,82 @@
+@import 'sass-bem/bem';
+
+@import '../base/common/var';
+
+$card-head-height: 48px;
+$card-hover-border: fade($black, 9%);
+$card-action-icon-size: 16px;
+
+$gradient-min: fade($card-skeleton-bg, 20%);
+$gradient-max: fade($card-skeleton-bg, 40%);
+
+@include component('card', 'ux') {
+  position: relative;
+  background: $card-background;
+  border-radius: $card-radius;
+  transition: all 0.3s;
+  box-sizing: border-box;
+
+  @include modifier('hoverable') {
+    border: 1px solid #f0f0f0;
+    cursor: pointer;
+    &:hover {
+      border-color: $card-hover-border;
+      box-shadow: $card-shadow;
+    }
+  }
+
+  @include modifier('bordered') {
+    border: $border-width-base $border-style-base $border-color-split;
+  }
+
+  @include element('thumb') {
+    > * {
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      border-radius: $card-radius $card-radius 0 0;
+    }
+  }
+
+  @include element('head') {
+    // min-height: $card-head-height;
+    margin-bottom: -1px; // Fix card grid overflow bug: https://gw.alipayobjects.com/zos/rmsportal/XonYxBikwpgbqIQBeuhk.png
+    padding: 0 $card-padding-base;
+    color: $card-head-color;
+    background: $card-head-background;
+    border-bottom: $border-width-base $border-style-base $border-color-split;
+    border-radius: $card-radius $card-radius 0 0;
+
+    @include element('head-wrapper') {
+      display: flex;
+      align-items: center;
+    }
+
+    @include element('head-title') {
+      display: inline-block;
+      flex: 1;
+      padding: $card-head-padding 0;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 500;
+      font-size: $font-size-lg;
+    }
+  }
+
+  @include element('extra') {
+    float: right;
+    // https://stackoverflow.com/a/22429853/3040605
+    margin-left: auto;
+    padding: $card-head-padding 0;
+    color: $text-color;
+    font-weight: normal;
+    font-size: $font-size-base;
+  }
+
+  @include element('body') {
+    padding: $card-padding-base;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "search.followSymlinks": false,
+  "search.exclude": {
+    "dist": true,
+    "yarn.lock": true,
+    "package-lock.json": true
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1500,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n",
+  "files.watcherExclude": {
+    "dist": true,
+    "yarn.lock": true,
+    "package-lock.json": true
+  },
+  "editor.minimap.enabled": false,
+  "vetur.validation.template": false,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.completion.autoImport": false,
+  "cSpell.words": [
+    "Fullscreen",
+    "Unmount",
+    "filterbar",
+    "haowu",
+    "hoverable",
+    "jsqr",
+    "lazyload",
+    "mixins",
+    "qrcode",
+    "rgba",
+    "searchbar",
+    "vite",
+    "vitejs"
+  ],
+  "cSpell.ignoreWords": [],
+  "cSpell.ignorePaths": [
+    ".vscode",
+    "dist",
+    "package-lock.json",
+    "yarn.lock"
+  ]
+}

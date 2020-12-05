@@ -1,0 +1,39 @@
+{
+  "name": "@zhengxs/haowu.h5.mall",
+  "private": false,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "jsqr": "^1.3.1",
+    "lodash-es": "^4.17.15",
+    "vant": "^3.0.0-rc.2",
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.0-rc.6",
+    "vuex": "^4.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.3",
+    "@vue/compiler-sfc": "^3.0.2",
+    "better-mock": "^0.3.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
+    "postcss-pxtorem": "^5.1.1",
+    "prettier": "^2.2.1",
+    "sass": "^1.29.0",
+    "sass-bem": "^2.6.5",
+    "vite": "^1.0.0-rc.8"
+  },
+  "engines": {
+    "node": ">= 12.x",
+    "npm": ">= 6.x"
+  },
+  "author": {
+    "name": "zhengxs2018",
+    "email": "zhengxs2018@foxmail.com"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,50 @@
+// -------- Colors -----------
+$white: #fff;
+$black: #000;
+$red: #fa2c19;
+
+$heading-color: rgba(#000, 85%);
+$heading-color-dark: rgba($white, 100%);
+
+$text-color: rgba($black, 65%);
+$text-color-secondary: rgba($black, 45%);
+$text-color-inverse: $white;
+
+// -------- Background -----------
+$background-color-light: hsl(0, 0, 98%); // background of header and selected item
+$background-color-base: hsl(0, 0, 96%); // Default grey background color
+
+$body-background: #f8f8f8;
+$component-background: #fff;
+
+// -------- Font -----------
+$font-size-base: 14px;
+$font-size-lg: $font-size-base + 2px;
+$font-size-sm: 12px;
+
+// -------- Border -----------
+$border-color-base: hsl(0, 0, 85%); // base border outline a component
+$border-color-split: hsl(0, 0, 94%); // split border inside a component
+$border-color-inverse: $white;
+$border-width-base: 1px; // width of the border for a component
+$border-style-base: solid; // style of a components border
+$border-radius-base: 2px;
+$border-radius-sm: $border-radius-base;
+
+// -------- Card -----------
+$card-head-color: $heading-color;
+$card-head-background: transparent;
+$card-head-padding: 12px;
+$card-padding-base: 12px;
+$card-actions-background: $background-color-light;
+$card-skeleton-bg: #cfd8dc;
+$card-background: $component-background;
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+$card-radius: $border-radius-sm;
+
+// -------- Price -----------
+$price-height: 25px;
+$price-font-size: $font-size-sm;
+$price-big-price-font-size: $font-size-lg;
+$price-font-size-lg: 18px;
+$price-big-price-font-size-lg: 30px;
