@@ -1,0 +1,149 @@
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #323233;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.startup-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.startup-page__content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startup-page__content .brand {
+  /* margin-top: 120px; */
+  text-align: center;
+}
+
+.startup-page__content .brand img {
+  width: 80px;
+}
+
+.startup-page__content .brand h3 {
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 26px;
+}
+
+.startup-page__content .brand p {
+  margin-top: 0px;
+  font-size: 12px;
+  color: #5a5a5a;
+}
+
+.startup-page__footer {
+  display: flex;
+  align-items: flex-end;
+  height: 240px;
+  box-sizing: border-box;
+}
+
+.startup-page__footer-inner {
+  padding-bottom: 20px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.startup-page__footer .progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  color: #848689;
+}
+
+.startup-page__footer .copyright {
+  margin: 0;
+  text-align: center;
+}
+
+.startup-page__footer .copyright span,
+.startup-page__footer .copyright a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.coffee_cup {
+  position: relative;
+  width: 20px;
+  height: 24px;
+  border: 1px solid #848689;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.coffee_cup:after,
+.coffee_cup:before {
+  position: absolute;
+  content: '';
+}
+
+.coffee_cup:after {
+  width: 5px;
+  height: 12px;
+  border: 1px #848689 solid;
+  border-left: none;
+  border-radius: 0px 20px 20px 0px;
+  left: 20px;
+}
+
+.coffee_cup:before {
+  width: 1px;
+  height: 6px;
+  background-color: #bbb;
+  top: -10px;
+  left: 4px;
+  box-shadow: 5px 0px 0px 0px #bbb, 5px -5px 0px 0px #bbb, 10px 0px 0px 0px #bbb;
+  -webkit-animation: steam 1s linear infinite alternate;
+  -moz-animation: steam 1s linear infinite alternate;
+  animation: steam 1s linear infinite alternate;
+}
+
+@-webkit-keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
+}
+@-moz-keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
+}
+@keyframes steam {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 6px;
+  }
+}
