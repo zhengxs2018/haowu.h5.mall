@@ -2,11 +2,13 @@ import 'vant/lib/index.css'
 import './components/base/index.scss'
 import './assets/styles/index.scss'
 
-import { createApp } from 'vue'
+import { createApp, Plugin } from 'vue'
 
 import Vant, { Toast } from 'vant'
 
 import App from './App.vue'
+import BootFailed from './views/exception/boot-failed.vue'
+
 import router from './router'
 import store from './store'
 import subscribes from './subscribes'
@@ -19,17 +21,32 @@ if (import.meta.env.MODE === 'development') {
 }
 
 function main() {
+  const app = createApp(App)
+
   // 创建应用
-  createApp(App)
+  app
     .use(Vant)
-    // @ts-ignore
-    .use(Vant.Lazyload)
+    .use(Vant.Lazyload as Plugin)
     .use(store)
     .use(router)
-    .mount('#app')
+
+  return app
+}
+
+/**
+ * 启动失败
+ *
+ * @todo 上报错误
+ */
+function bootFailed() {
+  const app = createApp(BootFailed)
+  app.use(Vant)
+  return app
 }
 
 Promise
   .all(subscribes)
-  .then(main)
+  .then(main, bootFailed)
+  .then(app => app.mount('#app'))
+
 
