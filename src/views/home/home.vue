@@ -11,7 +11,13 @@
 
   <nav-grid :items="nav" />
 
-  <product-list class="similar-list" title-class="similar-title" :onFetch="handleSimilarFetch" />
+  <product-list
+    class="similar-list"
+    title-class="similar-title"
+    :onFetch="handleSimilarFetch"
+    @thumb-click="jumpToProduct"
+    @title-click="jumpToProduct"
+  />
 </template>
 
 <script>
@@ -104,6 +110,12 @@ export default {
     }
   },
   methods: {
+    jumpToProduct(item) {
+      this.$router.push({
+        name: 'product',
+        params: { id: item.id }
+      })
+    },
     handleSimilarFetch() {
       return {
         items: [
