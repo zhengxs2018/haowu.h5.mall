@@ -8,48 +8,94 @@ import Price from '../price'
 const prefixCls = 'ux-product-card'
 
 export interface ProductCardProps {
+  /**
+   * 左侧图片 URL
+   */
   thumb?: string
+  /**
+   * 标题
+   */
   title: string
-  sku?: string
+  /**
+   * 描述
+   */
+  desc?: string
+  /**
+   * 图片角标
+   */
+  // tag?: string
+  /**
+   * 商品数量
+   */
+  num?: string | number
+  /**
+   * 商品价格
+   */
   price: number
-
-  onThumbClick?: (event: MouseEvent) => void
-  onTitleClick?: (event: MouseEvent) => void
+  /**
+   * 商品划线原价
+   */
+  originPrice?: number
+  /**
+   * 货币符号
+   */
+  currency?: string
+  /**
+   * 是否开启图片懒加载，须配合 Lazyload 组件使用
+   */
+  lazyLoad?: boolean
 }
 
-const ProductCard: FC<ProductCardProps> = (props, { slots }) => {
-  const title = renderSlot(slots, 'title', {}, () => {
+const ProductCard: FC<ProductCardProps> = (props, { slots: scopedSlots, emit }) => {
+  const title = renderSlot(scopedSlots, 'title', {}, () => {
     const value = props.title
     return value ? [value] : null
   })
 
-  const sku = renderSlot(slots, 'sku', {}, () => {
-    const value = props.sku
+  const desc = renderSlot(scopedSlots, 'desc', {}, () => {
+    const value = props.desc
     return value ? [value] : null
   })
 
-  const price = renderSlot(slots, 'price', {}, () => {
-    return [<Price value={props.price} />]
+  const price = renderSlot(scopedSlots, 'price', {}, () => {
+    return [<Price currency={props.currency} value={props.price} />]
   })
 
-  const extra = renderSlot(slots, 'extra')
+  const originPrice = renderSlot(scopedSlots, 'origin-price', {}, () => {
+    const value = props.originPrice
+    return value ? [<Price currency={props.currency} value={props.originPrice} />] : null
+  })
+
+  const num = renderSlot(scopedSlots, 'num', {}, () => {
+    const value = props.num
+    return value ? [`x${value}`] : null
+  })
+
+  const slots = {
+    default() {
+      return (
+        <>
+          {desc && <div class={`${prefixCls}__sku van-ellipsis`}>{desc}</div>}
+          {title && <div class={`${prefixCls}__title van-multi-ellipsis--l2`}>{title}</div>}
+          {renderSlot(scopedSlots, 'default')}
+          <div class={`${prefixCls}__meta`}>
+            <div class={`${prefixCls}__price-area`}>
+              {price}
+              {originPrice}
+            </div>
+            {num && <div class={`${prefixCls}__num`}>{num}</div>}
+          </div>
+        </>
+      )
+    }
+  }
 
   return (
-    <Card className={prefixCls} thumb={props.thumb} onThumbClick={props.onThumbClick}>
-      {sku && <div class={`${prefixCls}__sku van-ellipsis`}>{sku}</div>}
-      {title && (
-        <div class={`${prefixCls}__title van-multi-ellipsis--l2`} onClick={props.onTitleClick}>
-          {title}
-        </div>
-      )}
-      {renderSlot(slots, 'default')}
-      <div class={`${prefixCls}__meta`}>
-        <div class={`${prefixCls}__price-area`}>
-          {price}
-          {renderSlot(slots, 'market-price')}
-        </div>
-        {extra && <div class={`${prefixCls}__extra`}>{extra}</div>}
-      </div>
+    <Card
+      className={prefixCls}
+      thumb={props.thumb}
+      onThumbClick={(event) => emit('click-thumb', event)}>
+      {slots}
     </Card>
   )
 }

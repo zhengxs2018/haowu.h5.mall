@@ -2,9 +2,9 @@
   <slot></slot>
 
   <van-tabbar class="tabbar" route safe-area-inset-bottom>
-    <van-tabbar-item name="home" icon="home-o" to="/home">首页</van-tabbar-item>
-    <van-tabbar-item name="cart" icon="cart-o" to="/cart">购物车</van-tabbar-item>
-    <van-tabbar-item name="me" icon="friends-o" to="/me">我的</van-tabbar-item>
+    <van-tabbar-item icon="home-o" :to="{ name: 'home' }">首页</van-tabbar-item>
+    <van-tabbar-item icon="cart-o" :to="{ name: 'cart' }">购物车</van-tabbar-item>
+    <van-tabbar-item icon="friends-o" :to="{ name: 'me' }">我的</van-tabbar-item>
   </van-tabbar>
 </template>
 

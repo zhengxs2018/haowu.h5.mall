@@ -3,20 +3,15 @@ import type { RouteRecordRaw } from 'vue-router'
 export default <RouteRecordRaw[]>[
   {
     name: 'me',
-    path: '/me',
+    path: '/me/index',
     component: () => import('/@/views/me/index.vue'),
     meta: {
       layout: 'home'
     }
   },
   {
-    name: 'me-personal',
+    name: 'personal',
     path: '/me/personal',
     component: () => import('/@/views/me/personal.vue')
-  },
-  {
-    name: 'me-address',
-    path: '/me/address',
-    component: () => import('/@/views/me/address.vue')
   },
 ]

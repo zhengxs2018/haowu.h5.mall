@@ -1,0 +1,25 @@
+@import 'sass-bem/bem';
+
+@include component('price', 'ux') {
+  display: inline-block;
+  color: #ee0a24;
+  font-size: 12px;
+  font-family: Avenir-Heavy, 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: 1px;
+
+  @include is('del') {
+    text-decoration: line-through;
+  }
+
+  @include element('integer') {
+    font-size: 16px;
+  }
+
+  @include modifier('large') {
+    font-size: 18px;
+
+    @include element('integer') {
+      font-size: 30px;
+    }
+  }
+}

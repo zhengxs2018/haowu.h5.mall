@@ -14,7 +14,7 @@ $text-color-inverse: $white;
 $background-color-light: hsl(0, 0, 98%); // background of header and selected item
 $background-color-base: hsl(0, 0, 96%); // Default grey background color
 
-$body-background: #f8f8f8;
+$body-background: #f2f2f2;
 $component-background: #fff;
 
 // -------- Font -----------
@@ -29,6 +29,7 @@ $border-color-inverse: $white;
 $border-width-base: 1px; // width of the border for a component
 $border-style-base: solid; // style of a components border
 $border-radius-base: 2px;
+$border-radius-lg: $border-radius-base * 6;
 $border-radius-sm: $border-radius-base;
 
 // -------- Card -----------

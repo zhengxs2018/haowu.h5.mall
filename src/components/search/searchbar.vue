@@ -1,7 +1,6 @@
 <template>
   <van-search
     v-bind="$attrs"
-    v-on="$listeners"
     class="ux-searchbar"
     shape="round"
     clearable

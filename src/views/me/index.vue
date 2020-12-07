@@ -7,7 +7,7 @@
           <div class="me-avatar__decoration"></div>
         </div>
         <div class="me-personal">
-          <router-link class="me-personal__name van-ellipsis" :to="{ name: 'me-personal' }">
+          <router-link class="me-personal__name van-ellipsis" :to="{ name: 'personal' }">
             非数字党
           </router-link>
         </div>
@@ -94,6 +94,12 @@ export default {
             id: 2,
             thumb:
               '//img12.360buyimg.com/mobilecms/s372x372_jfs/t1/129687/40/6109/103387/5f2a6145E99f28afa/de7250d6031ec069.jpg!q70.dpg.webp',
+            title: '三雄极光 led 灯管支架 t8 灯管 1.2米日光灯空支架长条灯架',
+            price: 100,
+          },
+          {
+            id: 3,
+            thumb: 'https://img.yzcdn.cn/vant/ipad.jpeg',
             title: '三雄极光 led 灯管支架 t8 灯管 1.2米日光灯空支架长条灯架',
             price: 100,
           },

@@ -1,5 +1,5 @@
 <template>
-  <page class="trade-confirm-page">
+  <page class="deal-confirm-page">
     <van-nav-bar  left-arrow fixed title="填写订单" @click-left="$router.back()" />
 
     <!-- 选择收货地址 S -->
@@ -22,7 +22,7 @@
     <!-- 支付方式 -->
   </page>
 
-  <van-submit-bar class="trade-confirm-submit-bar" :price="3050" button-text="提交订单">
+  <van-submit-bar class="deal-confirm-submit-bar" :price="3050" button-text="提交订单">
   </van-submit-bar>
 </template>
 
@@ -30,7 +30,7 @@
 import Page from '/@/components/page'
 
 export default {
-  name: 'cart',
+  name: 'deal-confirm-page',
   data() {
     return {}
   },

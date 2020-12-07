@@ -1,6 +1,6 @@
 @import 'sass-bem/bem';
 
-@import '../base/common/var';
+@import '../../base/common/var';
 
 @include component('product-card', 'ux') {
   @include element('title') {
@@ -9,7 +9,7 @@
     font-size: $font-size-base;
   }
 
-  @include element('sku') {
+  @include element('desc') {
     margin-bottom: 2px;
     color: $text-color;
     font-size: $font-size-sm;
@@ -23,7 +23,7 @@
     justify-content: space-between;
   }
 
-  @include element('extra') {
+  @include element('num') {
     font-size: $font-size-sm;
     color: $text-color-secondary;
   }
@@ -33,6 +33,12 @@
     @include element('body') {
       padding-top: 6px;
       padding-bottom: 6px;
+    }
+  }
+
+  @include component('card', 'van') {
+    @include element('price') {
+      color: #ee0a24;
     }
   }
 }

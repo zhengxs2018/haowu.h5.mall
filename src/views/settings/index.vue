@@ -6,7 +6,7 @@
         title="个人信息"
         label="头像、昵称、收货地址"
         clickable
-        :to="{ name: 'me-personal' }"
+        :to="{ name: 'personal' }"
         is-link
       />
       <van-cell

@@ -1,12 +1,12 @@
 <template>
   <van-icon
     class="ux-icon-scan"
-    :class="className"
     :name="icon"
     :class-prefix="iconPrefix"
     @click="handleClick"
   />
-  <scan-camera v-model:value="visible" v-bind="$attrs" v-on="$listeners"></scan-camera>
+  <scan-camera v-model:value="visible"></scan-camera>
+  <!-- <scan-camera v-model:value="visible" v-bind="$attrs"></scan-camera> -->
 </template>
 
 <script lang="ts">

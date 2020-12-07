@@ -12,6 +12,11 @@ export default <RouteRecordRaw[]>[
     }
   },
   {
+    name: 'search',
+    path: '/search',
+    component: () => import('/@/views/search/index.vue')
+  },
+  {
     name: 'cart',
     path: '/cart',
     component: () => import('/@/views/cart/index.vue'),
@@ -19,9 +24,4 @@ export default <RouteRecordRaw[]>[
       layout: 'home'
     }
   },
-  {
-    name: 'search',
-    path: '/search',
-    component: () => import('/@/views/search/index.vue')
-  }
 ]

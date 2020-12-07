@@ -4,7 +4,7 @@ import './assets/styles/index.scss'
 
 import { createApp, Plugin } from 'vue'
 
-import Vant, { Toast } from 'vant'
+import Vant, { Toast, Lazyload } from 'vant'
 
 import App from './App.vue'
 import BootFailed from './views/exception/boot-failed.vue'
@@ -15,18 +15,12 @@ import subscribes from './subscribes'
 
 Toast.allowMultiple(true)
 
-// 添加 mock 数据
-if (import.meta.env.MODE === 'development') {
-  subscribes.push(import('./mocks/index'))
-}
-
 function main() {
   const app = createApp(App)
 
-  // 创建应用
   app
     .use(Vant)
-    .use(Vant.Lazyload as Plugin)
+    .use(Lazyload as Plugin)
     .use(store)
     .use(router)
 
@@ -42,6 +36,11 @@ function bootFailed() {
   const app = createApp(BootFailed)
   app.use(Vant)
   return app
+}
+
+// 添加 mock 数据
+if (import.meta.env.MODE === 'development') {
+  subscribes.push(import('./mocks/index'))
 }
 
 Promise

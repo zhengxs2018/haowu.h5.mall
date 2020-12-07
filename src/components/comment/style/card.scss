@@ -1,0 +1,7 @@
+@import 'sass-bem/bem';
+
+@include component('comment-card', 'ux') {
+  background-color: #fff;
+}
+
+

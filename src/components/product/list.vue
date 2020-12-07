@@ -15,8 +15,8 @@
         <product-card
           :thumb="item.thumb"
           :price="item.price"
-          :onThumbClick="(event) => handleThumbClick(event, item, index)"
           :onTitleClick="(event) => handleTitleClick(event, item, index)"
+          @click-thumb="handleThumbClick($event, item, index)"
         >
           <template #title>
             <slot name="title" v-bind="item">

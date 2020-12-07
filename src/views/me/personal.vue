@@ -8,7 +8,7 @@
       <van-cell title="收货地址"
 
         clickable
-        :to="{ name: 'me-address' }"
+        :to="{ name: 'address' }"
         is-link> 修改/添加 </van-cell>
     </van-cell-group>
   </div>

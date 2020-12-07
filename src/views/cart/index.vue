@@ -43,10 +43,10 @@ import Page from '/@/components/page'
 
 import Product from '/@/components/product'
 
-import CartList from './list.vue'
+import CartList from './components/list.vue'
 
 export default {
-  name: 'cart',
+  name: 'cart-page',
   data() {
     return {
       loading: false,
@@ -65,6 +65,13 @@ export default {
           title: '三雄极光 led 灯管支架 t8 灯管 1.2米日光灯空支架长条灯架',
           price: 100.0,
         },
+        {
+          id: 1,
+          thumb:
+            '//img12.360buyimg.com/mobilecms/s372x372_jfs/t1/129687/40/6109/103387/5f2a6145E99f28afa/de7250d6031ec069.jpg!q70.dpg.webp',
+          title: '三雄极光 led 灯管支架 t8 灯管 1.2米日光灯空支架长条灯架',
+          price: 100.0,
+        }
       ],
       selection: [],
     }
@@ -105,13 +112,19 @@ export default {
             title: '三雄极光 led 灯管支架 t8 灯管 1.2米日光灯空支架长条灯架',
             price: 100,
           },
+          {
+            id: 3,
+            thumb: 'https://img.yzcdn.cn/vant/ipad.jpeg',
+            title: '三雄极光 led 灯管支架 t8 灯管 1.2米日光灯空支架长条灯架',
+            price: 100,
+          },
         ],
         end: true,
       }
     },
     onSubmit() {
       this.$router.push({
-        name: 'trade-confirm',
+        name: 'deal-confirm',
         params: {
           tradeId: 'xx'
         }
