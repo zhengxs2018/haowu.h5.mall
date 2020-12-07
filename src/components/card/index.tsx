@@ -16,9 +16,12 @@ export interface CardProps {
 
   headStyle?: string | CSSProperties
   bodyStyle?: string | CSSProperties
+
+  onThumbClick?: (event: MouseEvent) => void
+  onTitleClick?: (event: MouseEvent) => void
 }
 
-const Card: FC<CardProps> = (props, { slots }) => {
+const Card: FC<CardProps> = (props, { slots, emit }) => {
   const title = renderSlot(slots, 'title', {}, () => {
     const value = props.title
     return value ? [value] : null
@@ -50,12 +53,12 @@ const Card: FC<CardProps> = (props, { slots }) => {
       {(title || extra) && (
         <div class={`${prefixCls}__head`} style={props.headStyle}>
           <div class={`${prefixCls}__head-wrapper`}>
-            {title && <div class={`${prefixCls}__head-title`}>{title}</div>}
+            {title && <div class={`${prefixCls}__head-title`} onClick={props.onTitleClick}>{title}</div>}
             {extra && <div class={`${prefixCls}__extra`}>{extra}</div>}
           </div>
         </div>
       )}
-      {thumb && <div class={`${prefixCls}__thumb`}>{thumb}</div>}
+      {thumb && <div class={`${prefixCls}__thumb`} onClick={props.onThumbClick}>{thumb}</div>}
       {children && (
         <div class={`${prefixCls}__body`} style={props.bodyStyle}>
           {children}

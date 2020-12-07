@@ -11,8 +11,13 @@
     @load="onLoad"
   >
     <van-row gutter="12">
-      <van-col v-for="item in items" span="12" :key="item.id">
-        <product-card :thumb="item.thumb" :price="item.price">
+      <van-col v-for="(item, index) in items" span="12" :key="item.id">
+        <product-card
+          :thumb="item.thumb"
+          :price="item.price"
+          :onThumbClick="(event) => handleThumbClick(event, item, index)"
+          :onTitleClick="(event) => handleTitleClick(event, item, index)"
+        >
           <template #title>
             <slot name="title" v-bind="item">
               {{ item.title }}
@@ -55,6 +60,14 @@ export default {
     }
   },
   methods: {
+    handleThumbClick(event: MouseEvent, item: unknown, index: number) {
+      event.stopPropagation()
+      this.$emit('thumb-click', item, index, this.items)
+    },
+    handleTitleClick(event: MouseEvent, item: unknown, index: number) {
+      event.stopPropagation()
+      this.$emit('title-click', item, index, this.items)
+    },
     handleAddItemToCart() {},
     async onLoad() {
       const page = this.page + 1

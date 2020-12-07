@@ -9,9 +9,12 @@ const prefixCls = 'ux-product-card'
 
 export interface ProductCardProps {
   thumb?: string
-  title?: string
+  title: string
   sku?: string
   price: number
+
+  onThumbClick?: (event: MouseEvent) => void
+  onTitleClick?: (event: MouseEvent) => void
 }
 
 const ProductCard: FC<ProductCardProps> = (props, { slots }) => {
@@ -32,9 +35,13 @@ const ProductCard: FC<ProductCardProps> = (props, { slots }) => {
   const extra = renderSlot(slots, 'extra')
 
   return (
-    <Card className={prefixCls} thumb={props.thumb}>
+    <Card className={prefixCls} thumb={props.thumb} onThumbClick={props.onThumbClick}>
       {sku && <div class={`${prefixCls}__sku van-ellipsis`}>{sku}</div>}
-      {title && <div class={`${prefixCls}__title van-multi-ellipsis--l2`}>{title}</div>}
+      {title && (
+        <div class={`${prefixCls}__title van-multi-ellipsis--l2`} onClick={props.onTitleClick}>
+          {title}
+        </div>
+      )}
       {renderSlot(slots, 'default')}
       <div class={`${prefixCls}__meta`}>
         <div class={`${prefixCls}__price-area`}>
