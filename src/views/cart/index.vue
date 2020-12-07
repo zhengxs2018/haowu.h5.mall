@@ -6,7 +6,7 @@
     @refresh="handleRefresh"
   >
     <page>
-      <van-nav-bar fixed title="购物车" @click-left="onClickLeft" @click-right="onClickRight">
+      <van-nav-bar fixed title="购物车" @click-left="onClickLeft">
         <template #right>
           <span v-if="items.length > 0" class="van-nav-bar__text" @click="handleEdit">
             {{ editing ? '完成' : '编辑' }}
@@ -14,7 +14,7 @@
         </template>
       </van-nav-bar>
 
-      <list :editable="editing" :items="items" />
+      <cart-list :editable="editing" :items="items" />
 
       <product-list
         class="similar-list"
@@ -43,7 +43,7 @@ import Page from '/@/components/page'
 
 import Product from '/@/components/product'
 
-import List from './list.vue'
+import CartList from './list.vue'
 
 export default {
   name: 'cart',
@@ -109,10 +109,18 @@ export default {
         end: true,
       }
     },
+    onSubmit() {
+      this.$router.push({
+        name: 'trade-confirm',
+        params: {
+          tradeId: 'xx'
+        }
+      })
+    }
   },
   components: {
     page: Page,
-    list: List,
+    'cart-list': CartList,
     'product-list': Product.List,
   },
 }
